@@ -1,11 +1,11 @@
 var nums = [1, -3, 45, 101];
 console.log(Math.max(21, 46, 35, 99));
 console.log(Math.max.apply(Math, nums));
-function makeArray() {
+function makeArray(name) {
     var args = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        args[_i] = arguments[_i];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        args[_i - 1] = arguments[_i];
     }
-    return args;
+    console.log(name, args);
 }
-console.log(makeArray(2, 34, -109));
+makeArray('ksenya', 2, 34, -109);
