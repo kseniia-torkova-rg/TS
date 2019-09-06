@@ -1,0 +1,9 @@
+<p>Since TypeScript 3, you can also use tuples as types for rest expressions.</p>
+<p>For example, these two function signatures are equal:</p>
+
+<pre class="prettyprint linenums">function printInfo(name: string, age: number) {
+    console.log('My name is ' + name + ' and I am ' + age + ' years old!');
+}</pre>
+<pre class="prettyprint linenums">function printInfo(...info: [string, number]) {
+    console.log('My name is ' + info[0] + ' and I am ' + info[1] + ' years old!');
+}</pre>
