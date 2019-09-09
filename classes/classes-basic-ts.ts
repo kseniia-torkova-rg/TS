@@ -37,3 +37,47 @@ const person = new Person('Alice', 22);
 console.log(person);
 
 person.printUsername();
+
+
+
+// ***
+// Getters & Setters
+// ***
+class Plant {
+  private _species: string = 'Default';
+  
+  get species() {
+    return this._species;
+  }
+  
+  set species(value: string) {
+    if (value.length > 3) {
+      this._species = value;
+    } else {
+      this._species = 'Default';
+    }
+  }
+}
+
+let plant = new Plant();
+plant.species = 'squash';
+console.log(plant.species);
+
+
+
+// ***
+// Static properties & methods
+// ***
+class Helpers {
+  // в отличие от ES6 статические свойства можно объявлять прмо внутри класса, используя ключевое слово statis
+  // статическое свойство
+  static PI: number = 3.14;
+  
+  // статический метод
+  static calcCircumference(diametеr: number): number {
+    return this.PI * diametеr;
+  }
+}
+
+console.log(2 * Helpers.PI);
+console.log(Helpers.calcCircumference(8));

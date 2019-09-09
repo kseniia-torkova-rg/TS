@@ -25,3 +25,47 @@ var Person = /** @class */ (function () {
 var person = new Person('Alice', 22);
 console.log(person);
 person.printUsername();
+// ***
+// Getters & Setters
+// ***
+var Plant = /** @class */ (function () {
+    function Plant() {
+        this._species = 'Default';
+    }
+    Object.defineProperty(Plant.prototype, "species", {
+        get: function () {
+            return this._species;
+        },
+        set: function (value) {
+            if (value.length > 3) {
+                this._species = value;
+            }
+            else {
+                this._species = 'Default';
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Plant;
+}());
+var plant = new Plant();
+plant.species = 'squash';
+console.log(plant.species);
+// ***
+// Static properties & methods
+// ***
+var Helpers = /** @class */ (function () {
+    function Helpers() {
+    }
+    // статический метод
+    Helpers.calcCircumference = function (diametеr) {
+        return this.PI * diametеr;
+    };
+    // в отличие от ES6 статические свойства можно объявлять прмо внутри класса, используя ключевое слово statis
+    // статическое свойство
+    Helpers.PI = 3.14;
+    return Helpers;
+}());
+console.log(2 * Helpers.PI);
+console.log(Helpers.calcCircumference(8));
