@@ -22,12 +22,12 @@ class Student {
         this.fullName = firstName + " " + middleInitial + " " + lastName;
     }
 }
-interface Person {
+interface User {
     firstName: string;
     middleInitial: string;
     lastName: string;
 }
-function greeter(person: Person) {
+function greeter(person: User) {
     return "Hello, " + person.firstName + " " + person.middleInitial + " " + person.lastName;
 }
 let user = new Student("Jane", "M.", "User");
