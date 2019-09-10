@@ -32,33 +32,12 @@ console.log(car.acceleration);
 car.accelerate(10);
 console.log(car.acceleration);
 // Exercise 2
-// class BaseObject {
-//   public width: number = 0;
-//   public height: number = 0;
-// 
-//   constructor(width: number, height: number) {
-//     this.width = width;
-//     this.height = height;
-//   }
-// }
-// 
-// class Rectangle extends BaseObject {
-//   calcSize(): number {
-//     return this.width * this.height;
-//   }
-// }
-// 
-// let baseObject = new BaseObject(0, 0);
-// let rectangle = new Rectangle(5, 2);
-// 
-// console.log(baseObject);
-// console.log(rectangle);
-// console.log(rectangle.calcSize());
-// Exercise 2. Alternative solution
 var BaseObject = /** @class */ (function () {
-    function BaseObject() {
+    function BaseObject(width, height) {
         this.width = 0;
         this.height = 0;
+        this.width = width;
+        this.height = height;
     }
     return BaseObject;
 }());
@@ -72,10 +51,27 @@ var Rectangle = /** @class */ (function (_super) {
     };
     return Rectangle;
 }(BaseObject));
-var rectangle = new Rectangle();
-rectangle.width = 5;
-rectangle.height = 2;
+var baseObject = new BaseObject(0, 0);
+var rectangle = new Rectangle(5, 2);
+console.log(baseObject);
+console.log(rectangle);
 console.log(rectangle.calcSize());
+// Exercise 2. Alternative solution
+// class BaseObject {
+//   width = 0;
+//   height = 0;
+// }
+// 
+// class Rectangle extends BaseObject {
+//   calcSize() {
+//     return this.width * this.height;
+//   }
+// }
+// 
+// const rectangle = new Rectangle();
+// rectangle.width = 5;
+// rectangle.height = 2;
+// console.log(rectangle.calcSize());
 // Exercise 3
 var CommonPerson = /** @class */ (function () {
     function CommonPerson() {
