@@ -62,7 +62,7 @@ var Helpers = /** @class */ (function () {
     Helpers.calcCircumference = function (diametеr) {
         return this.PI * diametеr;
     };
-    // в отличие от ES6 статические свойства можно объявлять прмо внутри класса, используя ключевое слово statis
+    // в отличие от ES6 статические свойства можно объявлять прямо внутри класса, используя ключевое слово statis
     // статическое свойство
     Helpers.PI = 3.14;
     return Helpers;
